@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_05_092702) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_05_092844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_05_092702) do
     t.index ["holder_type", "holder_id"], name: "index_folders_on_holder"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.bigint "folder_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_items_on_folder_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -48,4 +56,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_05_092702) do
   end
 
   add_foreign_key "fields", "schemas"
+  add_foreign_key "items", "folders"
 end
