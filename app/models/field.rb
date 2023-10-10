@@ -4,4 +4,8 @@ class Field < ApplicationRecord
   enum kind: {
     date: 1
   }
+
+  def property_class
+    "Properties::#{kind.camelize}".constantize
+  end
 end
