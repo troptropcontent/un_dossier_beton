@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :folder
   has_many :date_properties, class_name: 'Properties::Date', dependent: :destroy 
   has_many :currency_properties, class_name: 'Properties::Currency', dependent: :destroy 
+  has_many :folder_properties, class_name: 'Properties::Folder', dependent: :destroy 
 
   def properties
     folder.schema.fields.map {|field|
