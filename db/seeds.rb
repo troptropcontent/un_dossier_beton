@@ -1,8 +1,8 @@
 Project.destroy_all
 
-project = Project.create(name: 'France Agrimer')
+project = Project.create(name: 'A fake company')
 
-folder = project.folders.create!(name: '2023')
+folder = project.folders.create!(name: 'France Agrimer 2023')
 
 folder_schema = Schema.create!(holder: folder)
 
