@@ -19,4 +19,8 @@ class Folder < ApplicationRecord
       direct_schema
     end
   end
+
+  def completion
+    # TODO Create here something that returns the completion of a folder
+  end
 end
