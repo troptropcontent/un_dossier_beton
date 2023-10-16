@@ -1,5 +1,5 @@
 <% @folders.each do |folder| %>
-  <%= render CardComponent.new do |card| %>
+  <%= render CardComponent.new(path: folder) do |card| %>
     <%= card.with_header.with_content(folder.name) %>
     <%= card.with_body do %>
       <p class="text-slate-400" >
