@@ -1,0 +1,7 @@
+en:
+  folders:
+    index: 
+      card:
+        body: 
+          one: "%{count} Item - %{completion} completé"
+          other: "%{count} Items - %{completion} completé"

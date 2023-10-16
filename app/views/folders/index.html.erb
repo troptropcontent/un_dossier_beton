@@ -1,4 +1,13 @@
-<div>
-  <h1 class="font-bold text-4xl">Folders#index</h1>
-  <p>Find me in app/views/folders/index.html.erb</p>
-</div>
+<% @folders.each do |folder| %>
+  <%= render CardComponent.new do |card| %>
+    <%= card.with_header.with_content(folder.name) %>
+    <%= card.with_body do %>
+      <p class="text-slate-400" >
+        <%= t('folders.index.card.body', count: folder.items.count, completion: number_to_percentage(folder.items.count, precision: 0)) %>
+      </p >
+    <% end %>
+    <%= card.with_visual do %>
+      <%= render_icon 'folder', classes: 'h-8 w-8' %>
+    <% end  %>
+  <% end %>
+<% end %>
