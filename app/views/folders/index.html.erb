@@ -1,13 +1,15 @@
 <% @folders.each do |folder| %>
   <%= render CardComponent.new(path: folder) do |card| %>
-    <%= card.with_header.with_content(folder.name) %>
-    <%= card.with_body do %>
-      <p class="text-slate-400" >
-        <%= t('folders.index.card.body', count: folder.items.count, completion: number_to_percentage(folder.items.count, precision: 0)) %>
-      </p >
-    <% end %>
     <%= card.with_visual do %>
       <%= render_icon 'folder', classes: 'h-8 w-8' %>
     <% end  %>
+    <%= card.with_body do %>
+      <div class="flex flex-col grow justify-between">
+        <h1 class="text-xl my-auto"><%= folder.name %></h1>
+        <p class="text-slate-400" >
+          <%= t('folders.index.card.body', count: folder.items.count, completion: number_to_percentage(folder.items.count, precision: 0)) %>
+        </p >
+      </div>
+    <% end %>
   <% end %>
 <% end %>
