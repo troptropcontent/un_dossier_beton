@@ -11,7 +11,6 @@ class Folder < ApplicationRecord
   
 
   def schema
-    byebug
     # TODO - Check if this works propertly once the Properties::Folder will be implemented
     if holder_type == "Properties::Folder"
       holder.field.children_schema

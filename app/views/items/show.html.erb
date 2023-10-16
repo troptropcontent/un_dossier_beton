@@ -1,0 +1,8 @@
+<div class="bg-white h-full p-2">
+  <h1 class="text-center font-bold text-xl"><%= @item.name %></h1>
+  <div class="flex flex-col gap-2">
+    <% @item.properties.each do |property| %>
+      <%= render property %>
+    <% end %>
+  </div>
+</div>
