@@ -10,4 +10,9 @@ class Item < ApplicationRecord
       field.property_class.find_or_initialize_by(field: field, item: self)
     }
   end
+
+  def status
+    # TODO Put here a method that return either to_complete | completed | approved
+    %i[to_complete completed approved].sample
+  end
 end

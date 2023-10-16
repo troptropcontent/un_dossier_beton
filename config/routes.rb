@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "folders#index"
   resources :folders, only: [:index, :show]
+  resources :items, only: [:show]
 end

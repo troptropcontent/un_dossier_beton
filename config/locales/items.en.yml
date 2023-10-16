@@ -1,0 +1,7 @@
+en:
+  items:
+    attributes:
+      status: 
+        to_complete: To complete
+        completed: Completed
+        approved: Approved
