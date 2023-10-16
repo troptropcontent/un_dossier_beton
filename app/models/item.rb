@@ -13,6 +13,6 @@ class Item < ApplicationRecord
 
   def status
     # TODO Put here a method that return either to_complete | completed | approved
-    %i[to_complete completed approved].sample
+    @status ||= %i[to_complete completed approved].sample
   end
 end

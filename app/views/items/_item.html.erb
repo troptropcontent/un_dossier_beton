@@ -1,6 +1,8 @@
 <%= render CardComponent.new(path: item) do |card| %>
-  <%= card.with_header.with_content(item.name) %>
   <%= card.with_body do %>
-    <p><%= t("items.attributes.status.#{item.status}") %></p>
+    <div class="flex grow justify-between">
+      <h1 class="text-xl my-auto"><%= item.name %></h1>
+      <%= render TokenComponent.new(color: {to_complete: :danger, approved: :success, completed: :info }[item.status]).with_content(t("items.attributes.status.#{item.status}")) %>
+    </div>
   <% end %>
 <% end %>
