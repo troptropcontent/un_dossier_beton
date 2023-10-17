@@ -3,7 +3,7 @@
   <table>
     <thead>
       <tr>
-      <% folder.value.schema.fields.each do |field| %>
+      <% folder.value.schema.fields.order(:index).each do |field| %>
         <th ><%= field.name %></th>
       <% end %>
       </tr>

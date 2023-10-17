@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   has_many :document_properties, class_name: 'Properties::Document', dependent: :destroy 
 
   def properties
-    folder.schema.fields.map {|field|
+    folder.schema.fields.order(:index).map {|field|
       field.property_class.find_or_initialize_by(field: field, item: self)
     }
   end
