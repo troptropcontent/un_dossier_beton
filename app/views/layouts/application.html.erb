@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full flex flex-col">
   <head>
     <title>UnDossierBeton</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,8 +11,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="h-screen flex flex-col">
-    <main class="container h-screen flex flex-col p-8 bg-sky-50">
+  <body class="grow flex flex-col">
+    <main class="grow container flex flex-col p-8 bg-sky-50">
       <%= yield %>
     </main>
   </body>
