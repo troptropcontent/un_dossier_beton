@@ -16,7 +16,11 @@ module Properties
     def value
       properties.sum{|property| property.value}
     end
-  
+    
+    def to_partial_path
+      "properties/aggregates/aggregate"
+    end
+
     private
   
     def field_to_aggregate
