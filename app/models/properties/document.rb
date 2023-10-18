@@ -6,4 +6,8 @@ class Properties::Document < ApplicationRecord
   def value
     file.blob.filename.to_s
   end
+
+  def completed?
+    file.present?
+  end
 end
