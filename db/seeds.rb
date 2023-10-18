@@ -14,7 +14,7 @@ folder_schema_folder_field_schema_date_field = folder_schema_folder_field_schema
 folder_schema_folder_field_schema_currency_field = folder_schema_folder_field_schema.fields.create!(name: 'Montant', kind: :currency)
 folder_schema_folder_field_schema_folder_field = folder_schema_folder_field_schema.fields.create!(name: 'Facture', kind: :document)
 
-folder_schema_aggregate_field = folder_schema.fields.create!(name: 'Total Factures', kind: :aggregate)
+folder_schema_aggregate_field = folder_schema.fields.create!(name: 'Total Factures', kind: :aggregate, required: false)
 folder_schema_aggregate_field_configuration = Configurations::Aggregate.create!(field: folder_schema_aggregate_field, field_to_aggregate: folder_schema_folder_field_schema_currency_field)
 
 

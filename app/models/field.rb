@@ -19,6 +19,8 @@ class Field < ApplicationRecord
 
   # TODO Validates association of a config if configurable?
 
+  # TODO Validates that an Aggregate field can not be required
+
   enum kind: {
     date: 1,
     currency: 2,
