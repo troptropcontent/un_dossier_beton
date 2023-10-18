@@ -30,7 +30,7 @@ folder_schema_aggregate_field_configuration = Configurations::Aggregate.create!(
   rand(1..3).times do |n|
     item_number = n+1
     item = property_folder_folder.items.create!(name: "FACTURE #{item_number.to_s.rjust(5,"0")}")
-    Properties::Date.create!(field: folder_schema_folder_field_schema_date_field, item: item, value: Date.today)
+    Properties::Date.create!(field: folder_schema_folder_field_schema_date_field, item: item, value: Date.today) if rand(0..1) == 1
     Properties::Currency.create!(field: folder_schema_folder_field_schema_currency_field, item: item, value: rand(99.0))
     property_document = Properties::Document.create!(field: folder_schema_folder_field_schema_folder_field, item: item)
     property_document.file.attach(io: File.open("app/assets/pdfs/facture_test.pdf"), filename: 'file.pdf')

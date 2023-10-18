@@ -1,24 +1,23 @@
-<% case property.class.name %>
-  <% when 'Properties::Document' %> 
-    <td>
-      <% if property.file.present? %>        
-        <%= link_to rails_blob_path(property.file, disposition: "attachment") do %>
-          <%= render_icon 'file', classes: 'h-4 w-4' %>
-        <% end %>
-      <% end %>
-    </td>
-  <% when 'Properties::Currency' %> 
-    <td>
-      <%= humanized_money_with_symbol property.value %>
-    </td>
-  <% when 'Properties::Folder' %> 
-    <td>
-      <%= render_icon 'folder', classes: 'h-4 w-4' %>
-    </td>
-  <% when 'Properties::Date' %> 
-    <td>
-      <%= property.value %>
-    </td>
-  <% else %> 
-    <td>UnsuportedFormat</td>
+<% if !property.completed? %>
+  <td class='bg-red-200 rounded'></td>
+<% elsif property.class.name == 'Properties::Document' %>
+  <td>
+    <%= link_to rails_blob_path(property.file, disposition: "attachment") do %>
+      <%= render_icon 'file', classes: 'h-4 w-4' %>
+    <% end %>
+  </td>
+<% elsif property.class.name == 'Properties::Currency' %>
+  <td >
+    <%= humanized_money_with_symbol property.value %>
+  </td>
+<% elsif property.class.name == 'Properties::Folder' %>
+  <td>
+    <%= render_icon 'folder', classes: 'h-4 w-4' %>
+  </td>
+<% elsif property.class.name == 'Properties::Date' %>
+  <td>
+    <%= property.value %>
+  </td>
+<% else %>
+  <td>UnsuportedFormat</td>
 <% end %>

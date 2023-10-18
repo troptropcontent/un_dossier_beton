@@ -21,6 +21,10 @@ module Properties
       "properties/aggregates/aggregate"
     end
 
+    def completed?
+      true
+    end
+
     private
   
     def field_to_aggregate

@@ -1,4 +1,4 @@
-<span class="flex justify-between">
+<span class="grid grid-cols-2">
   <p><%= aggregate.field.name %></p>
-  <p><%= humanized_money_with_symbol aggregate.value %></p>
+  <p class='text-end'><%= humanized_money_with_symbol aggregate.value %></p>
 </span>

@@ -1,4 +1,8 @@
-<span class="flex justify-between">
+<span class="grid grid-cols-2">
   <p><%= date.field.name %></p>
-  <p><%= date.value %></p>
+  <% if date.completed? %>
+    <p class='text-end'><%= date.value %></p>
+  <% else %>
+    <div class='bg-red-200 rounded'></div>
+  <% end %>
 </span>

@@ -1,4 +1,8 @@
-<span class="flex justify-between">
+<span class="grid grid-cols-2">
   <p><%= currency.field.name %></p>
-  <p><%= humanized_money_with_symbol currency.value %></p>
+  <% if currency.completed? %>
+    <p class='text-end'><%= humanized_money_with_symbol currency.value %></p>
+  <% else %>
+    <div class='bg-red-200 rounded'></div>
+  <% end %>
 </span>
