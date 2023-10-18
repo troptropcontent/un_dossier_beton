@@ -1,22 +1,24 @@
 <% case property.class.name %>
   <% when 'Properties::Document' %> 
-    <td class='text-center'>
-      <%= link_to rails_blob_path(property.file, disposition: "attachment"), class: 'flex justify-center' do %>
-        <%= render_icon 'file', classes: 'h-4 w-4' %>
+    <td>
+      <% if property.file.present? %>        
+        <%= link_to rails_blob_path(property.file, disposition: "attachment") do %>
+          <%= render_icon 'file', classes: 'h-4 w-4' %>
+        <% end %>
       <% end %>
     </td>
   <% when 'Properties::Currency' %> 
-    <td class='text-center'>
+    <td>
       <%= humanized_money_with_symbol property.value %>
     </td>
   <% when 'Properties::Folder' %> 
-    <td class='text-center'>
+    <td>
       <%= render_icon 'folder', classes: 'h-4 w-4' %>
     </td>
   <% when 'Properties::Date' %> 
-    <td class='text-center'>
+    <td>
       <%= property.value %>
     </td>
   <% else %> 
-    <td class='text-center'>UnsuportedFormat</td>
+    <td>UnsuportedFormat</td>
 <% end %>

@@ -14,11 +14,16 @@ class Item < ApplicationRecord
   end
 
   def status
-    # TODO Put here a method that return either to_complete | completed | approved
-    @status ||= %i[to_complete completed approved].sample
+    return :to_complete unless completed?
+    approved? ? :approved : :completed
   end
 
   def completed?
     properties(required_only: true).all?(&:completed?)
+  end
+
+  def approved?
+    # TODO Implement a system of review here 
+    true
   end
 end

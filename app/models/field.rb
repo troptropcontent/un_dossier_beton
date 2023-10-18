@@ -37,6 +37,10 @@ class Field < ApplicationRecord
     "Configurations::#{kind.camelize}".constantize
   end
 
+  def reposition(new_index)
+   # TODO Create a reposition logic here that will place the item at the new index and offset all the following
+  end
+
   private
 
   def set_index!

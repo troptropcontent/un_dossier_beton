@@ -1,0 +1,23 @@
+.Table > thead > tr > th {
+  text-align: center;
+ }
+
+.Table > thead > tr > th:first-child {
+ text-align: start;
+}
+
+.Table > thead > tr > th:last-child {
+  text-align: end;
+ }
+
+.Table > tbody > tr > td {
+  text-align: center;
+}
+
+.Table > tbody > tr > td:first-child {
+  text-align: start;
+}
+
+.Table > tbody > tr > td:last-child {
+  text-align: end;
+}
