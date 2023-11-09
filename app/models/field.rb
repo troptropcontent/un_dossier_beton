@@ -7,6 +7,7 @@ class Field < ApplicationRecord
   has_many :currency_properties, class_name: 'Properties::Currency', dependent: :destroy 
   has_many :folder_properties, class_name: 'Properties::Folder', dependent: :destroy 
   has_many :document_properties, class_name: 'Properties::Document', dependent: :destroy 
+  has_many :datetime_properties, class_name: 'Properties::Datetime', dependent: :destroy 
   
   # Configurations
   has_one :aggregate_configuration, class_name: 'Configurations::Aggregate', dependent: :destroy 
@@ -27,6 +28,7 @@ class Field < ApplicationRecord
     folder: 3,
     document: 4,
     aggregate: 5,
+    datetime: 6,
   }
 
   def property_class

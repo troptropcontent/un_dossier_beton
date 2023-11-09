@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_18_055727) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_09_104156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -107,6 +107,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_055727) do
     t.index ["item_id"], name: "index_properties_dates_on_item_id"
   end
 
+  create_table "properties_datetimes", force: :cascade do |t|
+    t.datetime "value"
+    t.bigint "item_id", null: false
+    t.bigint "field_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["field_id"], name: "index_properties_datetimes_on_field_id"
+    t.index ["item_id"], name: "index_properties_datetimes_on_item_id"
+  end
+
   create_table "properties_documents", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "field_id", null: false
@@ -143,6 +153,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_055727) do
   add_foreign_key "properties_currencies", "items"
   add_foreign_key "properties_dates", "fields"
   add_foreign_key "properties_dates", "items"
+  add_foreign_key "properties_datetimes", "fields"
+  add_foreign_key "properties_datetimes", "items"
   add_foreign_key "properties_documents", "fields"
   add_foreign_key "properties_documents", "items"
   add_foreign_key "properties_folders", "fields"

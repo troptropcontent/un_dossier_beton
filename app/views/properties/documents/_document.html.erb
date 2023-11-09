@@ -1,0 +1,11 @@
+
+<span class="grid grid-cols-2">
+  <p><%= document.field.name %></p>
+  <% if document.completed? %>
+    <%= link_to rails_blob_path(property.file, disposition: "attachment") do %>
+      <%= render_icon 'file', classes: 'h-4 w-4' %>
+    <% end %>
+  <% else %>
+    <div class='bg-red-200 rounded'></div>
+  <% end %>
+</span>

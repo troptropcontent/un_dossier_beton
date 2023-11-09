@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    awesome_print (1.9.2)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -104,6 +105,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    local_time (2.1.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -248,12 +250,14 @@ PLATFORMS
   arm64-darwin-20
 
 DEPENDENCIES
+  awesome_print
   bootsnap
   byebug
   capybara
   debug
   importmap-rails
   jbuilder
+  local_time
   money-rails (~> 1.12)
   pg (~> 1.1)
   puma (~> 5.0)
